@@ -1,0 +1,167 @@
+---
+title: "LUAD vs LUSC"
+author: "Jaeho Jeong"
+output:
+  html_document:
+    fig_height: 6
+    fig_width: 10
+    highlight: textmate
+    toc: yes
+    toc_depth: 4
+    toc_float: yes
+  word_document: default
+  github_document:
+    toc: yes
+    toc_depth: 4
+---  
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, eval=F)
+```  
+
+
+# LUAD vs LUSC
+
+## Lung Cancer
+
+* **폐암(Lung Cancer)**이란 폐에 비정상적인 암세포가 무절제하게 증식하여 종괴(덩어리)를 형성하고 인체에 해를 미치는 것을 말합니다.
+* **폐암(Lung Cancer)**은 진행되면 반대쪽 폐뿐만 아니라 임파선이나 혈액을 통하여 뼈, 간, 부신, 신장, 뇌, 척수 등 온몸으로 전이될 수 있어 약 86%의 사망률을 가진 위험한 병입니다.
+
+
+
+### 비소세포폐암(non-samll-cell lung cancer)
+
+* 폐암은 암세포의 크기와 형태 등 병리조직학적 기준에 따라 소세포폐암과 비소세포폐암으로 나뉜다.
+* 현미경으로 확인되는 암세포의 크기가 작은 것을 소세포폐암이라 하고, 작지 않은 것을 비소세포폐암이라고 한다.
+* 비소세포폐암은 발생하는 폐암의 80~85%를 차지하고, 크게 `선암(LUAD)`과 `편평상피세포암(LUSC)`로 나눌 수 있다.
+
+
+### Representative 2 Types
+
+* `선암(LUAD)`  
+특정 물질의 분비를 주된 기능으로 하는 인체의 선세포에 생기는 암을 뜻한다.  
+폐암 종류 가운데서 발생 빈도가 가장 높다.
+  
+* `편평상피세포암(LUSC)`  
+폐의 기관지 점막을 구성하는 편평상피세포가 변성해서 생기는 암을 뜻한다.  
+주로 폐 중심부에서 발견되며, 남자에게 흔하고 흡연과 관련이 많습니다.
+![](C:/Users/광호컴/Desktop/학부연구/biology/폐.gif)
+
+## Thesis {.tabset .tabset-fade .tabset-pills}
+
+[Distinct lung cancer subtypes associate to distinct drivers of tumor progression](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6238974/)
+
+
+### Abstract
+
+우리는 발견된 암 관련 요인들의 예후의 영향을 조사하기 위하여 이 분야에 대해 탐구합니다.  
+
+이 연구는 LUAD 또는 LUSC의 임상의 결과에 영향을 미치는 69가지의 구분된 예후의 암 요인들을 발견하기 위함이다.  
+이는 암 성장, 세포 순환, 전사 인자 그리고 신진대사의 핵심 요인이다.  
+LUAD와 LUSC간에 가끔 완전히 다른 요인들이 존재하고 종종 임상 결과에서 반대의 영향을 미치기도 한다.  
+따라서, NSCLC의 부분집합에 관해 차이가 나는 사항 역시 고려되어야 한다.
+
+
+### Introduction
+
+폐암은 크게 소세포폐암(SCLC)과 비소세포폐암(NSCLC)으로 나뉜다.  
+NSCLC와 SCLC를 구분하는것은 명확하지만 NSCLC에 속하는 폐암 종류들을 구분하는것은 아직 명확하지 않는다.  
+
+서로 구분된 유전자 집합들은 LUAD와 LUSC에서 차이가 존재한다.  
+`Charkiewicz et al`의 연구에서는 LUAD와 LUSC사이의 진단으로 53개의 유전자 특징이 발견되엇다.  
+그리고 추가적인 유전 집단들 역시 `Liu et al`에 의하여 발견되었다.  
+
+* **LUAD**과 관련된 유전자들은 단단한 연결지점과 세포 부착 구성요소들이 포함되어있다.  
+
+이 분석은 **transcriptomic DNA microarray**와 **clinical data**를 이용하여 실시된다.
+
+
+### Result
+
+이 논문에서는 LUAD와 LUSC간 다르게 표현되는 유전자들에 관하여 탐구해보았습니다.  
+주로 `survival analysis`와 `forest plot`을 통해 비교를 실시하였다.
+
+<br>
+<br>
+
+**Survival Analysis**
+![](C:/Users/광호컴/Desktop/학부연구/biology/result.gif)  
+[Result of survival analysis](https://www.ncbi.nlm.nih.gov/core/lw/2.0/html/tileshop_pmc/tileshop_pmc_inline.html?title=Click%20on%20image%20to%20zoom&p=PMC3&id=6238974_oncotarget-09-35528-g001.jpg)
+
+<br>
+<br>
+
+**Forest Plots**
+![](C:/Users/광호컴/Desktop/학부연구/biology/forest.gif)  
+[Forest plots](https://www.ncbi.nlm.nih.gov/core/lw/2.0/html/tileshop_pmc/tileshop_pmc_inline.html?title=Click%20on%20image%20to%20zoom&p=PMC3&id=6238974_oncotarget-09-35528-g004.jpg)  
+
+<br>
+**Forest Plot**은 LUAD vs LUSC에서 나타난 반대의 영향과 overexpress된 각각의 요인들의 영향을 요약해준다.  
+LUAD와 LUSC 각각에서 가운데 점선은 `HR=1`을 뜻한다.  
+* risk value들의 중앙값은 점들로 표현된다.
+* 신뢰구간은 수평선들로 표현된다. 
+
+
+<br>
+<br>
+
+**Network Analysis**
+![](C:/Users/광호컴/Desktop/학부연구/biology/network.gif)  
+[Network analysis](https://www.ncbi.nlm.nih.gov/core/lw/2.0/html/tileshop_pmc/tileshop_pmc_inline.html?title=Click%20on%20image%20to%20zoom&p=PMC3&id=6238974_oncotarget-09-35528-g006.jpg)  
+
+<br>
+
+**Control Network**는 LUAD와 LUSC에서 완전히 다른 세포 성장과 세포자멸사를 확인하기 위하여 사용  
+* 유전자들은 노드로써 나타난다.
+* 노드들간의 생물학적인 관계들은 선들로 나타난다.
+* LUSC(left panel)과 LUAD(right panel)에서 overexpress된 유전자들은 파란색으로 표현되었고, direct interactor는 회색으로 표현되었다.
+
+
+### Materials and Methods
+
+**Materials**
+
+* the pre-processed summarized experiment datasets
+    * ./LUAD/all/LUAD_Illumina_HiSeq_all.rda
+    * ./LUAD/paired/LUAD_Illumina_HiSeq_paired.rda
+    * ./LUSC/all/LUSC_Illumina_HiSeq_all.rda
+    * ./LUSC/paired/LUSC_Illumina_HiSeq_paired.rda
+    
+* the summarized experiment datasets upon filtering of tumor purity
+    * ./LUAD/all/LUAD_Illumina_HiSeq_all_tumorPurity.rda
+    * ./LUAD/paired/LUAD_Illumina_HiSeq_paired_tumorPurity.rda
+    * ./LUAD/unpaired/LUAD_Illumina_HiSeq_unpaired_tumorPurity.rda
+    * ./LUSC/all/LUSC_Illumina_HiSeq_all_tumorPurity.rda
+    * ./LUSC/paired/LUAD_Illumina_HiSeq_paired_tumorPurity.rda
+    * ./LUSC/unpaired/LUSC_Illumina_HiSeq_unpaired_tumorPurity.rda
+
+* the summarized experiment datasets upon the normalization steps
+    * ./LUAD/all/LUAD_PreprocessedData_all_tumorPurity.rda
+    * ./LUAD/paired/LUAD_PreprocessedData_paired_tumorPurity.rda
+    * ./LUAD/unpaired/LUAD_PreprocessedData_unpaired_tumorPurity.rda
+    * ./LUSC/all/LUSC_PreprocessedData_all_tumorPurity.rda
+    * ./LUSC/paired/LUSC_PreprocessedData_paired_tumorPurity.rda
+    * ./LUSC/unpaired/LUSC_PreprocessedData_unpaired_tumorPurity.rda
+
+<br>
+<br>
+
+**Methods**
+
+위의 데이터들을 활용하여  
+**Survival Analysis**  
+**Network Analysis**  
+위의 두 가지 분석을 실시하여 LUSC와 LUAD간의 차이가 존재하는 유전자들을 식별하는 것을 목표로 삼았습니다.
+
+<br>
+<br>
+
+# PRACTICE
+
+[LUAD_LUSC_TCGA_comparison in Github](https://github.com/ELELAB/LUAD_LUSC_TCGA_comparison)
+
+## Download_script
+
+
+

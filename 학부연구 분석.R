@@ -16,14 +16,29 @@ dim(data1)
 # 27579 X 640
 
 
-data_max_stddev <- fread("LUSC.meth.by_max_stddev.data.txt", data.table=T)
+data_max_sd <- fread("LUSC.meth.by_max_stddev.data.txt", data.table=F)
+dim(data_max_stddev)
+View(data_max_stddev)
 
 
+data_mean <- fread("LUSC.meth.by_mean.data.txt", data.table=F)
+dim(data_mean)
 
+a <- data_max_sd[,1]
+b <- data_mean[,1]
 
+n <- 0
 
-
-
+for(i in 1:length(a)){
+  for(j in 1:length(b)){
+    if(a[i]==b[j]){
+      n <- n+1
+    }else{
+      n <- n
+    }
+  }
+}
+ 
 
 
 
